@@ -5,7 +5,7 @@
 
 
 select s.last_name, s.first_name, s.students_group_number,
-       issue_date, expiration_date, age(current_date, expiration_date)
+issue_date, expiration_date, age(current_date, expiration_date)
 from students as s
 join student_ids as si on si.student_id = s.student_id
 where si.expiration_date < current_date
