@@ -10,6 +10,4 @@ union all
 select last_name, first_name, patronymic, 'Студент' AS person_type
 from students
 where lower(trim(coalesce(patronymic, ''))) not like '%на'
-and lower(trim(last_name)) not like '%а''
-
-ORDER BY last_name, first_name;
+and lower(trim(last_name)) not like '%а'

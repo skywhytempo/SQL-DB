@@ -1,5 +1,6 @@
--- Задача: вывести единый список преподавателей и студентов определённого подразделения.
+-- Задача: вывести единый список преподавателей и студентов вместе с их подразделением
 
+create view all_persons as
 select p.last_name, p.first_name, p.patronymic, 'Преподаватель' as role, su.full_title
 from professors as p
 join employments as e on p.professor_id = e.professor_id
@@ -12,8 +13,10 @@ from students as s
 join students_groups as sg on s.students_group_number = sg.students_group_number
 join structural_units as su on sg.structural_unit_id = su.structural_unit_id
 
+select * from all_persons
 
+select * from prosrochka
 
-
+select * from students_marks
 
 

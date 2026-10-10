@@ -12,6 +12,8 @@ group by f.field_id, p.last_name, p.first_name, p.patronymic
 
 
 --Более лаконичное решение
+
+-- 37.	Вывести название предмета, фамилию и имя преподавателя, который ведет этот предмет и среднюю оценку у всех студентов за этот предмет. Оставить только те предметы, которые читаются в первом семестре.
 with avg_mark_per_field as (
     select f.field_id, f.field_name, round(avg(fc.mark), 2) as avg_mark
     from fields as f

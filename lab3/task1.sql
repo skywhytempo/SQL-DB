@@ -20,4 +20,4 @@ with count_degree AS (
 
 SELECT DISTINCT degree from professors
 
-) SELECT * FROM count_degree
+) SELECT count(*) as "count *", count(degree) as "count degree" FROM count_degree
