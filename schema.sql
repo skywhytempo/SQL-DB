@@ -95,3 +95,29 @@ CREATE TABLE Field_comprehensions(
 	PRIMARY KEY(student_id, field)
 );
 
+create table benefits(
+    benefit_id serial primary key,
+    benefit_name varchar(100) not null
+);
+
+create table scholarships(
+    scholarship_id serial primary key,
+    scholarship_name varchar(100) not null,
+    amount numeric(10, 2) not null
+);
+
+create table student_benefits(
+    student_id integer references students(student_id),
+    benefit_id integer references benefits(benefit_id),
+    start_date date not null,
+    end_date date not null,
+    primary key(student_id, benefit_id)
+);
+
+create table student_scholarships(
+    student_id integer references students(student_id),
+    scholarship_id integer references scholarships(scholarship_id),
+    start_date date not null,
+    end_date date not null,
+    primary key(student_id, scholarship_id)
+);
